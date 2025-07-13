@@ -1,0 +1,250 @@
+/* RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #6a4e1e;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Estado “X” */
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+/* NAVEGACIÓN */
+nav {
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+/* SECCIONES */
+section {
+  padding: 40px 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #6a4e1e;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* IMÁGENES */
+.imagen-principal,
+.imagen-catalogo {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-principal {
+  width: 100%;
+  max-width: 800px;
+}
+
+.imagen-catalogo {
+  width: 100%;
+  max-width: 300px;
+}
+
+.imagen-principal:hover,
+.imagen-catalogo:hover {
+  transform: scale(1.05);
+}
+
+/* FORMULARIO */
+#form-contacto {
+  display: grid;
+  grid-gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* BOTONES */
+button {
+  background-color: #6a4e1e;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #8a5c2e;
+  transform: translateY(-2px);
+}
+
+/* OTROS */
+#nosotros ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.grid-especias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 1rem;
+  padding: 20px;
+}
+
+.rec-img {
+  width: 85%;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background-color: #6a4e1e;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* MEDIA QUERY: MÓVIL */
+@media (max-width: 768px) {
+  /* Mostrar menu hamburguesa y apilar nav */
+  .menu-toggle {
+    display: block;
+    position: static;
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  /* Ajustes generales para pantalla móvil */
+  section {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
